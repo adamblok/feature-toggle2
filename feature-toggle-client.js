@@ -55,7 +55,10 @@ var union = require('mout/array/union'),
   getActiveFeatures =
       function getActiveFeatures(baseFeatures,
         paramFeatures, inactiveFeatures) {
-    var features = union(baseFeatures, paramFeatures);
+    var features = baseFeatures;
+    if (paramFeatures) {
+      features = union(baseFeatures, paramFeatures);
+    }
 
     inactiveFeatures = inactiveFeatures || [];
 
@@ -83,8 +86,10 @@ var union = require('mout/array/union'),
         .className.split(' ').filter(function (className) {
           return !className.match(/^ft/);
         });
-    document.getElementsByTagName('body')[0].className =
-      classNames.join(' ') + ' ' + featureClasses;
+    var bodyClassName = (classNames.join(' ') + ' ' + featureClasses).trim();
+    if (bodyClassName !== '') {
+      document.getElementsByTagName('body')[0].className = bodyClassName;
+    }
   },
 
   /**
@@ -165,7 +170,7 @@ var union = require('mout/array/union'),
 
     // Kick things off by setting feature classes
     // for the currently active features.
-    setFlags(activeFeatures);
+    setFlags(activeFeatures ? activeFeatures : []);
 
     return ft;
   };

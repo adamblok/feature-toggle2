@@ -1,1 +1,6 @@
 node_modules
+/.idea/.gitignore
+/.idea/FeatureToggle2.iml
+/.idea/modules.xml
+/package-lock.json
+/.idea/vcs.xml
