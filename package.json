@@ -1,5 +1,5 @@
 {
-  "name": "feature-toggle",
+  "name": "feature-toggle2",
   "version": "0.3.3",
   "description": "A painless feature toggle system in JavaScript. Decouple development and deployment.",
   "browser": "feature-toggle-client.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ericelliott/feature-toggle"
+    "url": "https://github.com/adamblok/feature-toggle2"
   },
   "keywords": [
     "feature",
