@@ -32,15 +32,14 @@
     "url": "https://github.com/ericelliott/feature-toggle/issues"
   },
   "dependencies": {
-    "mout": "~0.7.1",
     "eventemitter2": "~0.4.13",
     "stampit": "~0.6.1"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-qunit": "~0.3.0",
     "browserify": "~2.35.1",
-    "grunt-browserify": "~1.2.11"
+    "grunt": "~0.4.1",
+    "grunt-browserify": "~1.2.11",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-qunit": "~0.3.0"
   }
 }

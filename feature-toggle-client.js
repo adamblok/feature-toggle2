@@ -1,8 +1,6 @@
 'use strict';
 
-var union = require('mout/array/union'),
-  contains = require('mout/array/contains'),
-  EventEmitter = require('events').EventEmitter,
+var EventEmitter = require('events').EventEmitter,
   stampit = require('stampit'),
 
   /**
@@ -57,7 +55,7 @@ var union = require('mout/array/union'),
         paramFeatures, inactiveFeatures) {
     var features = baseFeatures;
     if (paramFeatures) {
-      features = union(baseFeatures, paramFeatures);
+      features = baseFeatures.concat(paramFeatures);
     }
 
     inactiveFeatures = inactiveFeatures || [];
@@ -114,7 +112,7 @@ var union = require('mout/array/union'),
         active: function active(feature) {
           var testFeature = feature && feature.trim &&
             feature.trim();
-          return contains(activeFeatures, testFeature);
+          return activeFeatures.indexOf(testFeature) !== -1;
         },
 
         /**
@@ -130,7 +128,7 @@ var union = require('mout/array/union'),
          * @type {Array} activated features
          */
         activate: function activate(features) {
-          activeFeatures = union(activeFeatures, features);
+          activeFeatures = activeFeatures.concat(features);
           setFlags(activeFeatures);
           this.emit('activated', features);
           return this;
@@ -151,7 +149,7 @@ var union = require('mout/array/union'),
         deactivate: function deactivate(features) {
           activeFeatures =
             activeFeatures.filter(function (feature) {
-              return !contains(features, feature);
+              return features.indexOf(feature) === -1;
             });
           setFlags(activeFeatures);
           this.emit('deactivated', features);
