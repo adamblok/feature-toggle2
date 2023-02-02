@@ -1,6 +1,6 @@
 {
   "name": "feature-toggle2",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "A painless feature toggle system in JavaScript. Decouple development and deployment.",
   "browser": "feature-toggle-client.js",
   "main": "feature-toggle-client.js",
