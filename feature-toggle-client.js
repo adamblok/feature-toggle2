@@ -161,10 +161,11 @@ var EventEmitter = require('events').EventEmitter,
       // composing the methods above with an
       // event emitter using the Stampit
       // prototypal inheritance library.
-      ft = stampit.compose(
-        stampit.convertConstructor(EventEmitter),
-        stampit(methods)
-      ).create();
+      ft = stampit(stampit({
+        methods: methods
+      }), stampit({
+        methods: EventEmitter.prototype
+      }));
 
     // Kick things off by setting feature classes
     // for the currently active features.

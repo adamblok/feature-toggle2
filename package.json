@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "eventemitter2": "~0.4.13",
-    "stampit": "~0.6.1"
+    "stampit": "~4.3.2"
   },
   "devDependencies": {
     "browserify": "~2.35.1",
